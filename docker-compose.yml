@@ -1,0 +1,20 @@
+# @Author: Matthew Hale <mlhale>
+# @Author: Matthew Hale <mlhale>
+# @Date:   2023-09-11T14:12:53-05:00
+# @Email:  mlhale@unomaha.edu
+# @Filename: docker-compose.yml
+# @Last modified by:   mlhale
+# @Last modified time: 2023-09-11T18:18:34-05:00
+# @Copyright: Copyright (C) 2019 Matthew L. Hale
+
+
+
+version: '3'
+services:
+    python-live-demo:
+        build: .
+        command: bash -c "python3 code/dogapi/manage.py runserver 0.0.0.0:8000"
+        ports: 
+            - "8000:8000"
+        volumes: 
+            - ./code:/code
